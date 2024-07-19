@@ -31,6 +31,11 @@ public class InputHandler : MonoBehaviour
         return velocity.y;
     }
 
+    public bool IsOpenInventoryPressed()
+    {
+        return Input.GetKeyDown(KeyCode.I);
+    }
+
     public bool IsInteractPressed()
     {
         return Input.GetKeyDown(KeyCode.E);

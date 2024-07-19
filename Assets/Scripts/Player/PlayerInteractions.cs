@@ -1,45 +1,41 @@
 using System;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerTriggerCollider))]
 public class PlayerInteractions : MonoBehaviour
 {
-    public event EventHandler OnPlayerInteract;
-    private IInteractable interactable;
-    private PlayerTriggerCollider playerTriggerCollider;
-
-    private void Awake()
+    public event EventHandler<OnPlayerInteractEventArgs> OnPlayerInteract;
+    public class OnPlayerInteractEventArgs : EventArgs
     {
-        playerTriggerCollider = GetComponent<PlayerTriggerCollider>();        
+        public IInteractable interactable;
     }
 
-    private void OnEnable()
-    {
-        playerTriggerCollider.OnPlayerSetInteractable += PlayerTriggerCollider_OnPlayerSetInteractable;
-    }
-
-    private void OnDisable()
-    {
-        playerTriggerCollider.OnPlayerSetInteractable -= PlayerTriggerCollider_OnPlayerSetInteractable;
-    }
-
-    private void PlayerTriggerCollider_OnPlayerSetInteractable(object sender, PlayerTriggerCollider.OnPlayerSetInteractableEventArgs e)
-    {
-        interactable = e.interactable;
-    }
+    private IInteractable currentInteractable;
 
     private void CallOnPlayerInteract()
     {
-        interactable.Interact();
-        OnPlayerInteract?.Invoke(this, new EventArgs());
+        OnPlayerInteract?.Invoke(this, new OnPlayerInteractEventArgs{
+            interactable = currentInteractable
+        });
+        currentInteractable.Interact();
     }
 
-    public void HandleInteractions(bool canInteract)
+    public void ResetInteractable()
     {
-        if (interactable != null  && canInteract)
+        currentInteractable = null;
+
+    }
+
+    public void HandleInteractions(bool isInteractPressed)
+    {
+        if (currentInteractable != null  && isInteractPressed)
         {
             CallOnPlayerInteract();
         }
+    }
+
+    public void SetInteractable(IInteractable interactable)
+    {
+        currentInteractable = interactable;
     }
 
 }

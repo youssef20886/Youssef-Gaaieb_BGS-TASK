@@ -1,25 +1,38 @@
 using System;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class InteractUI : MonoBehaviour
 {
-    [SerializeField] private PlayerTriggerCollider playerTriggerCollider;
-    [SerializeField] private UiElement InteractUiElement;
+    private MerchantNpc merchantNpc;
+    private PlayerDetecter playerDetecter;
+    private UiElement InteractUiElement;
+
+    private void Awake()
+    {
+        merchantNpc = GetComponentInParent<MerchantNpc>();
+        playerDetecter = GetComponentInParent<PlayerDetecter>();
+        InteractUiElement = GetComponentInChildren<UiElement>();    
+    }
 
     private void OnEnable()
     {
-        playerTriggerCollider.OnPlayerSetInteractable += PlayerTriggerCollider_OnPlayerSetInteractable;
+        playerDetecter.OnPlayerDetected += PlayerDetecter_OnPlayerDetected;
+        merchantNpc.OnNpcInteract += MerchantNpc_OnNpcInteract;
     }
 
     private void OnDisable()
     {
-        playerTriggerCollider.OnPlayerSetInteractable -= PlayerTriggerCollider_OnPlayerSetInteractable;
+        playerDetecter.OnPlayerDetected -= PlayerDetecter_OnPlayerDetected;
+        merchantNpc.OnNpcInteract -= MerchantNpc_OnNpcInteract;
     }
 
-    private void PlayerTriggerCollider_OnPlayerSetInteractable(object sender, PlayerTriggerCollider.OnPlayerSetInteractableEventArgs e)
+    private void MerchantNpc_OnNpcInteract(object sender, MerchantNpc.OnNpcInteractEventArgs e)
     {
-        bool state = e.interactable == null ? false : true;
-        InteractUiElement.SetActive(state);
+        InteractUiElement.SetActive(!e.isInteracting);
+    }
+
+    private void PlayerDetecter_OnPlayerDetected(object sender, PlayerDetecter.OnPlayerDetectedEventArgs e)
+    {
+        InteractUiElement.SetActive(e.isClose);
     }
 }
