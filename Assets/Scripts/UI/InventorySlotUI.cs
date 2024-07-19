@@ -23,8 +23,8 @@ public class InventorySlotUI : MonoBehaviour
     {
         itemSO = null;
         slotIcon.sprite = null;
+        SetIsSelected(false);
         IsEmpty = true;
-        selectedFrame.SetActive(false);
     }
 
     public void AddItem(ItemSO item)

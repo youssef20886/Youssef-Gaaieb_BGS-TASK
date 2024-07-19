@@ -48,7 +48,7 @@ public class PlayerInventory : Inventory
         return InventoryItems.Count == NumberOfSlots;
     }
 
-    public bool HasMoneyForItem(ItemSO item)
+    public bool HasGoldForItem(ItemSO item)
     {
         return totalGold >= item.price;
     }

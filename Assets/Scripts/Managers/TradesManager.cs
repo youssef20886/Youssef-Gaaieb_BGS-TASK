@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class InventoryManager : MonoBehaviour
+public class TradesManager : MonoBehaviour
 {
     private PlayerInteractions playerInteractions;
     private PlayerInventory playerInventory;
@@ -33,7 +33,6 @@ public class InventoryManager : MonoBehaviour
                 OpenInventory();
             }
         }
-
     }
 
     private void OpenInventory()
@@ -56,13 +55,12 @@ public class InventoryManager : MonoBehaviour
 
         ItemSO item = npcInventory.GetSelectedItem();
         
-        if (item != null && playerInventory.HasMoneyForItem(item))
+        if (item != null && playerInventory.HasGoldForItem(item))
         {
             // npcInventory.RemoveItem(item);
             playerInventory.AddItem(item);
             playerInventory.UpdatePlayerGold(-item.price);
         }
-
     }
 
     public void Sell()
