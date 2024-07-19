@@ -1,8 +1,10 @@
+using System;
 using UnityEngine;
 
 public class InputHandler : MonoBehaviour
 {
-    [SerializeField] private float jumpTakeOffSpeed = 7;
+
+    public event EventHandler OnPlayerInteract;
 
     public float GetMovementInput()
     {
@@ -10,7 +12,7 @@ public class InputHandler : MonoBehaviour
         return movementInput.x = Input.GetAxisRaw("Horizontal");
     }
 
-    public float HandleJumpInput(Vector2 velocity, bool grounded)
+    public float GetJumpInput(Vector2 velocity, float jumpTakeOffSpeed, bool grounded)
     {
         if (Input.GetButtonDown("Jump") && grounded)
         {

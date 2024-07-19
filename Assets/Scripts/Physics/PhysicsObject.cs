@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class PhysicsObject : MonoBehaviour
 {
-    [HideInInspector] public float minGroundNormalY = 0.65f;
-    [HideInInspector] public float gravityModifier = 1f;
+    protected float minGroundNormalY = 0.65f;
+    protected float gravityModifier = 1.5f;
 
     protected bool grounded;
     protected Vector2 groundNormal;
@@ -34,13 +34,8 @@ public class PhysicsObject : MonoBehaviour
     private void Update()
     {
         targetVelocity = Vector2.zero;
-        ComputeVelocity();
     }
 
-    protected virtual void ComputeVelocity()
-    {
-
-    }
 
     private void FixedUpdate()
     {
