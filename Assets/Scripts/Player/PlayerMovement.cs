@@ -16,6 +16,8 @@ public class PlayerMovement : PhysicsObject
 
     public void ComputeVelocity(InputHandler inputHandler)
     {
+        targetVelocity = Vector2.zero;
+
         velocity.y = inputHandler.GetJumpInput(velocity, jumpTakeOffSpeed, grounded);
         VelocityX = MathF.Abs(velocity.x) / movementSpeed;
         targetVelocity = new Vector2(inputHandler.GetMovementInput(), 0) * movementSpeed;

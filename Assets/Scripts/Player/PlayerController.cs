@@ -3,9 +3,9 @@ using UnityEngine;
 
 [RequireComponent(typeof(InputHandler))]
 [RequireComponent(typeof(PlayerMovement))]
-[RequireComponent(typeof(PlayerInteractions))]
 [RequireComponent(typeof(PlayerRenderer))]
 [RequireComponent(typeof(PlayerAnimator))]
+[RequireComponent(typeof(PlayerInteractions))]
 
 public class PlayerController : MonoBehaviour
 {
@@ -18,17 +18,24 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        inputHandler = GetComponent<InputHandler>();
-        playerRenderer = GetComponent<PlayerRenderer>();
-        playerAnimator = GetComponent<PlayerAnimator>();
-        playerMovement = GetComponent<PlayerMovement>();
-        playerInteractions = GetComponent<PlayerInteractions>();
+       Initialize(); 
     }
 
     private void Update() 
     {
         playerMovement.ComputeVelocity(inputHandler);
         playerRenderer.FlipPlayer(inputHandler.GetMovementInput());
-        playerAnimator.HandleLocomotionAnimations(playerMovement.IsGrounded, playerMovement.VelocityX);
+        playerAnimator.SetLocomotionAnimations(playerMovement.IsGrounded, playerMovement.VelocityX);
+        playerInteractions.HandleInteractions(inputHandler.IsInteractPressed());
+    }
+
+
+    private void Initialize()
+    {
+        inputHandler = GetComponent<InputHandler>();
+        playerRenderer = GetComponent<PlayerRenderer>();
+        playerAnimator = GetComponent<PlayerAnimator>();
+        playerMovement = GetComponent<PlayerMovement>();
+        playerInteractions = GetComponent<PlayerInteractions>();    
     }
 }

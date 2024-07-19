@@ -3,9 +3,6 @@ using UnityEngine;
 
 public class InputHandler : MonoBehaviour
 {
-
-    public event EventHandler OnPlayerInteract;
-
     public float GetMovementInput()
     {
         Vector2 movementInput = Vector2.zero;
@@ -32,5 +29,10 @@ public class InputHandler : MonoBehaviour
         }
         
         return velocity.y;
+    }
+
+    public bool IsInteractPressed()
+    {
+        return Input.GetKeyDown(KeyCode.E);
     }
 }

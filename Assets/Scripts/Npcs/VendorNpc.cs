@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FriendlyNpc : Npc, IInteractable
+public class VendorNpc : Npc, IInteractable
 {
     public void Interact()
     {
-        print("You are interacting with " + gameObject.name);
+        print("You are interacting with " + npcName);
     }
 }

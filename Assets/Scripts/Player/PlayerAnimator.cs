@@ -9,7 +9,7 @@ public class PlayerAnimator : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
     }
 
-    public void HandleLocomotionAnimations(bool grounded, float velocityX)
+    public void SetLocomotionAnimations(bool grounded, float velocityX)
     {
         if (animator)
         {

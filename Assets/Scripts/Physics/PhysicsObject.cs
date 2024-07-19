@@ -31,12 +31,6 @@ public class PhysicsObject : MonoBehaviour
         contactFilter.useLayerMask = true;
     }
 
-    private void Update()
-    {
-        targetVelocity = Vector2.zero;
-    }
-
-
     private void FixedUpdate()
     {
         velocity += gravityModifier * Physics2D.gravity * Time.deltaTime;    
