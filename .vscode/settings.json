@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Empty 2d.sln"
+    "dotnet.defaultSolution": "Youssef-Gaaieb_BGS-TASK.sln"
 }
