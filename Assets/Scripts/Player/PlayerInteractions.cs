@@ -7,10 +7,12 @@ public class PlayerInteractions : MonoBehaviour
     public class OnPlayerInteractEventArgs : EventArgs
     {
         public IInteractable interactable;
+        public bool isInteracting;
     }
 
     private PlayerInteractionsTrigger playerInteractionsTrigger;
     private IInteractable currentInteractable;
+    private bool isInteracting;
 
     private void Awake()
     {
@@ -49,8 +51,11 @@ public class PlayerInteractions : MonoBehaviour
 
     private void CallOnPlayerInteract()
     {
+        isInteracting = !isInteracting;
+
         OnPlayerInteract?.Invoke(this, new OnPlayerInteractEventArgs{
-            interactable = currentInteractable
+            interactable = currentInteractable,
+            isInteracting = isInteracting
         });
         currentInteractable.Interact();
     }

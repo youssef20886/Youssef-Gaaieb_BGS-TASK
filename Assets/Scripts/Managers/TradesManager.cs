@@ -26,7 +26,15 @@ public class TradesManager : MonoBehaviour
         if (e.interactable is MerchantNpc)
         {
             MerchantNpc merchantNpc = e.interactable as MerchantNpc;
-            npcInventory = merchantNpc.GetNpcInventory();
+            
+            if(e.isInteracting)
+            {
+                npcInventory = merchantNpc.GetNpcInventory();
+            }
+            else
+            {
+                npcInventory = null;
+            }
 
             if (!merchantNpc.GetIsInteracting())
             {
