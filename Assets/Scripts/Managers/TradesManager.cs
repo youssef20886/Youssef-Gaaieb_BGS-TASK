@@ -37,7 +37,7 @@ public class TradesManager : MonoBehaviour
 
     private void OpenInventory()
     {
-        if (!playerInventory.GetIsInventoryOpen())
+        if (!playerInventory.IsInventoryOpen())
         {
             playerInventory.ToggleInventory();
         }
@@ -69,7 +69,7 @@ public class TradesManager : MonoBehaviour
 
         ItemSO item = playerInventory.GetSelectedItem();
 
-        if (item != null && npcInventory.GetIsInventoryOpen())
+        if (item != null && npcInventory.IsInventoryOpen())
         {
             playerInventory.RemoveItem(item);
             playerInventory.UpdatePlayerGold(item.price);

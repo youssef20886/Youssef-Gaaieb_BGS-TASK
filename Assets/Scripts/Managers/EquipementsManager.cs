@@ -24,17 +24,13 @@ public class EquipementsManager : MonoBehaviour
 
         if(item != null)
         {
+            int itemIndex = playerInventory.GetItemPositionInInventory(item);
             playerInventory.RemoveItem(item);
-            playerInventory.AddItem(GetItemToBeSwapped(item.equipementType));
+            playerInventory.AddItemAtPosition(GetItemToBeSwapped(item.equipementType),itemIndex);
             equippedItems.Add(item);
             GetEquipementSlot(item.equipementType).EquipItem(item);
         }
         
-    }
-
-    public void UnEquipItem(ItemSO item)
-    {
-
     }
 
     private void GetAllEquipementSlots()

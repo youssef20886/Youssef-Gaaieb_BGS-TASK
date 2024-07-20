@@ -47,6 +47,17 @@ public abstract class Inventory : MonoBehaviour
         UpdateInventory();
     }
 
+    public void AddItemAtPosition(ItemSO item, int index = 0)
+    {
+        InventoryItems.Insert(index, item);
+        UpdateInventory();
+    }
+
+    public int GetItemPositionInInventory(ItemSO item)
+    {
+        return InventoryItems.IndexOf(item);
+    }
+
     public void RemoveItem(ItemSO item)
     {
         if (!InventoryItems.Contains(item)) return;
@@ -55,7 +66,7 @@ public abstract class Inventory : MonoBehaviour
         UpdateInventory();
     }
 
-    public bool GetIsInventoryOpen()
+    public bool IsInventoryOpen()
     {
         return inventoryState;
     }

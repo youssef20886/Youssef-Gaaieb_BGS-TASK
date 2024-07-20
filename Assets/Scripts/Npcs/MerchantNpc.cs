@@ -30,7 +30,7 @@ public class MerchantNpc : Npc, IInteractable
     private void PlayerDetecter_OnPlayerDetected(object sender, PlayerDetecter.OnPlayerDetectedEventArgs e)
     {
         // close merchant inventory if player is too far
-        if (!e.isClose && npcInventory.GetIsInventoryOpen())
+        if (!e.isClose && npcInventory.IsInventoryOpen())
         {
             npcInventory.ToggleInventory();
         }

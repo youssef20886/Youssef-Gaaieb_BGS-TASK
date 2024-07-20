@@ -19479,16 +19479,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InventoryItems:
-  - {fileID: 11400000, guid: 668f276a333bee64e885a6797d548f41, type: 2}
-  - {fileID: 11400000, guid: a0ba683f45e295745aae2601cd38b7fa, type: 2}
-  - {fileID: 11400000, guid: a0ba683f45e295745aae2601cd38b7fa, type: 2}
-  - {fileID: 11400000, guid: a0ba683f45e295745aae2601cd38b7fa, type: 2}
-  - {fileID: 11400000, guid: a0ba683f45e295745aae2601cd38b7fa, type: 2}
-  - {fileID: 11400000, guid: a0ba683f45e295745aae2601cd38b7fa, type: 2}
-  - {fileID: 11400000, guid: a0ba683f45e295745aae2601cd38b7fa, type: 2}
-  - {fileID: 11400000, guid: a0ba683f45e295745aae2601cd38b7fa, type: 2}
-  - {fileID: 11400000, guid: a0ba683f45e295745aae2601cd38b7fa, type: 2}
-  numberOfSlots: 9
+  - {fileID: 11400000, guid: 8de80dbbde1ac244e9928fc5ccd0bd2c, type: 2}
+  - {fileID: 11400000, guid: 042141018191a084787cfabaab2d0d7f, type: 2}
+  - {fileID: 11400000, guid: 0a4d01633755d9e4182d2854f1696e1f, type: 2}
+  - {fileID: 11400000, guid: f159aab143bf73e489bd81a2dbac16f8, type: 2}
+  - {fileID: 11400000, guid: 5d0ca0260d27f674d9ab5ce0c05e5965, type: 2}
+  - {fileID: 11400000, guid: dda1b591cd5b8ab4f9117716a04a748b, type: 2}
+  - {fileID: 11400000, guid: 8631af3c5258c3249b3eb5963ce54de2, type: 2}
+  - {fileID: 11400000, guid: 6db8fc207bbe77a428e7ca551d496955, type: 2}
+  - {fileID: 11400000, guid: 849f3065ce67b7f46afde9415b64553e, type: 2}
+  - {fileID: 11400000, guid: a70aeeb3d5fe0a84e96fc5c31d85408e, type: 2}
+  - {fileID: 11400000, guid: 6ff54b247101dba42833c1c6dd05015b, type: 2}
+  - {fileID: 11400000, guid: 7ad1c2e918433ed44a7fa8cbc4b199c3, type: 2}
+  - {fileID: 11400000, guid: 0fbfc2e3cbeb5c54f89b8d2998a7b38d, type: 2}
+  - {fileID: 11400000, guid: 45c2ae71cf52d4446b0ecd9c363e0e5d, type: 2}
+  - {fileID: 11400000, guid: 82c022757f55fae4db5f318af4b6fc1c, type: 2}
+  numberOfSlots: 15
 --- !u!114 &1415646739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20616,11 +20622,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f2dee9ebfad3014eb6f6320f5269b1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InventoryItems:
-  - {fileID: 11400000, guid: d67a5c05a2bb0f344a241dbc2c9c0520, type: 2}
-  - {fileID: 11400000, guid: 6fd20dab18f63f74aae3afab1c53ed8e, type: 2}
-  - {fileID: 11400000, guid: 166dcaa2526279b4cbc947f523bca0d3, type: 2}
-  numberOfSlots: 8
+  InventoryItems: []
+  numberOfSlots: 10
   totalGold: 1000
 --- !u!114 &1487710571
 MonoBehaviour:
@@ -20635,7 +20638,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   equippedItems:
+  - {fileID: 11400000, guid: 6fd20dab18f63f74aae3afab1c53ed8e, type: 2}
+  - {fileID: 11400000, guid: 166dcaa2526279b4cbc947f523bca0d3, type: 2}
+  - {fileID: 11400000, guid: d59348f54ff23704c9391212c8d6bf75, type: 2}
+  - {fileID: 11400000, guid: 82d667a2e34b248428cac3b98e434f73, type: 2}
   - {fileID: 11400000, guid: 683e0dfdda4f6aa4087bef3f91ea729d, type: 2}
+  - {fileID: 11400000, guid: 60c5e8d35a7a2a046ae69053d5d1bcff, type: 2}
+  - {fileID: 11400000, guid: 732cba071d866894497311e0ee910d44, type: 2}
+  - {fileID: 11400000, guid: c608d7f2028fc2f49978db4017f919b9, type: 2}
+  - {fileID: 11400000, guid: e118d9baa6537ad4cbc5a630385306d8, type: 2}
+  - {fileID: 11400000, guid: e25306254dff27147b9e72c0ae3178d7, type: 2}
+  - {fileID: 11400000, guid: 0cece70f2f0252248a018b8f0ed491ba, type: 2}
+  - {fileID: 11400000, guid: ecc3337b30f84e64db1a292595a2f45b, type: 2}
+  - {fileID: 11400000, guid: 949ecb7bd76c20e428b78b92ffe319bf, type: 2}
+  - {fileID: 11400000, guid: 7661d4a46bd94e146a1e8abd795bb5c1, type: 2}
+  - {fileID: 11400000, guid: 42050c365032a2e4f88ef1583907ab18, type: 2}
   equipementSlots: []
 --- !u!1 &1499561677
 GameObject:
@@ -31055,7 +31072,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ece48dca5e286fd48b5dc0633b08b15d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -33345,7 +33362,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ab59709aadb3a224294b3c3b5c47cc79, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

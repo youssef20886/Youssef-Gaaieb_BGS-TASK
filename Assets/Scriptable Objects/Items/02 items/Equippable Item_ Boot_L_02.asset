@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: afd37455f489a644bb383896b2a4c37b, type: 3}
-  m_Name: Equippable Item_ Elbow_L_01
+  m_Name: Equippable Item_ Boot_L_02
   m_EditorClassIdentifier: 
   itemName: Basic left boot
-  icon: {fileID: 21300000, guid: 48ecbe245379f214497aae538fe1d4f3, type: 3}
+  icon: {fileID: 21300000, guid: 164343c771fbc9a4ba90c40b6719e388, type: 3}
+  sprite: {fileID: 21300000, guid: 2932647fff9189e40a62a25143f3f534, type: 3}
   price: 100
   rarity: 0
-  equipementType: 2
-  equipementPosition: 2
+  equipementType: 5

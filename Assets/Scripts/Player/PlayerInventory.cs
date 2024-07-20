@@ -35,9 +35,9 @@ public class PlayerInventory : Inventory
         }
     }
 
-    public void UpdatePlayerGold(int amoun)
+    public void UpdatePlayerGold(int amount)
     {
-        totalGold += amoun;
+        totalGold += amount;
         OnGoldModified?.Invoke(this, new OnGoldModifiedEventArgs{
             amount = totalGold
         });

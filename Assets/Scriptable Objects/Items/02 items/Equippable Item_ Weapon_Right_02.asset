@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: afd37455f489a644bb383896b2a4c37b, type: 3}
-  m_Name: Equippable Item_
+  m_Name: Equippable Item_ Weapon_Right_02
   m_EditorClassIdentifier: 
-  itemName: Dagger
-  icon: {fileID: 21300000, guid: 8708d80070522a043a1ab6a2b2775382, type: 3}
-  price: 500
+  itemName: Basic Weapon
+  icon: {fileID: 21300000, guid: 46fe353a4dd499941b62350fa60a2f24, type: 3}
+  sprite: {fileID: 21300000, guid: 97ad91e8b9bc5f94f941f06a70776c26, type: 3}
+  price: 100
   rarity: 0
-  equipementType: 0
-  equipementPosition: 0
+  equipementType: 1
