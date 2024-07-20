@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class GoldUI : MonoBehaviour
 {
-    [SerializeField] private PlayerInventory playerInventory;
     [SerializeField] private TextMeshProUGUI totalGoldTmpro;
+    [SerializeField] private PlayerInventory playerInventory;
 
     private void Awake()
     {
