@@ -10,21 +10,20 @@ public static class Enums
 
     public enum EquipementType
     {
+        Weapon_Left,
+        Weapon_Right,
         Hood,
-        Boot,
-        Elbow,
-        Leg,
         Pelvis,
-        Shoulder,
         Torso,
-        Wrist,
-        Weapon
-    }
-
-    public enum EquipementPosition
-    {
-        Head,
-        Right,
-        Left
+        Boot_Left,
+        Boot_Right,
+        Elbow_Left,
+        Elbow_Right,
+        Leg_Left,
+        Leg_Right,
+        Shoulder_Left,
+        Shoulder_Right,
+        Wrist_Left,
+        Wrist_Right,
     }
 }

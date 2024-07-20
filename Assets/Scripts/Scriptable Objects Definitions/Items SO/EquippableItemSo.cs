@@ -4,5 +4,4 @@ using UnityEngine;
 public class EquippableItemSo : ItemSO 
 {
     public Enums.EquipementType equipementType;
-    public Enums.EquipementPosition equipementPosition; 
 }
