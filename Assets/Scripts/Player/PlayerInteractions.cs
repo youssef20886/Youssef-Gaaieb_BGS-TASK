@@ -67,8 +67,13 @@ public class PlayerInteractions : MonoBehaviour
 
     private void ResetInteractable()
     {
+        isInteracting = false;
         currentInteractable = null;
 
+        OnPlayerInteract?.Invoke(this, new OnPlayerInteractEventArgs{
+            interactable = currentInteractable,
+            isInteracting = isInteracting
+        });
     }
 
 

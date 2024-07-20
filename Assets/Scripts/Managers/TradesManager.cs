@@ -1,7 +1,12 @@
+using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class TradesManager : MonoBehaviour
 {
+    public event EventHandler OnBuy;
+    public event EventHandler OnSell;
+
     private PlayerInteractions playerInteractions;
     private PlayerInventory playerInventory;
     private NpcInventory npcInventory;
@@ -66,6 +71,8 @@ public class TradesManager : MonoBehaviour
         if (item != null && playerInventory.HasGoldForItem(item))
         {
             // npcInventory.RemoveItem(item);
+            OnBuy?.Invoke(this, EventArgs.Empty);
+            
             playerInventory.AddItem(item);
             playerInventory.UpdatePlayerGold(-item.price);
         }
@@ -79,6 +86,8 @@ public class TradesManager : MonoBehaviour
 
         if (item != null && npcInventory.IsInventoryOpen())
         {
+            OnSell?.Invoke(this, EventArgs.Empty);
+
             playerInventory.RemoveItem(item);
             playerInventory.UpdatePlayerGold(item.price);
         }
