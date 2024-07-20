@@ -32,7 +32,7 @@ public class MerchantNpc : Npc, IInteractable
         // close merchant inventory if player is too far
         if (!e.isClose && npcInventory.IsInventoryOpen())
         {
-            npcInventory.ToggleInventory();
+            Interact();
         }
     }
 

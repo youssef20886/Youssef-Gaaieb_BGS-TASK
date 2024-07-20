@@ -2256,6 +2256,7 @@ GameObject:
   - component: {fileID: 170902081}
   - component: {fileID: 170902082}
   - component: {fileID: 170902083}
+  - component: {fileID: 170902084}
   m_Layer: 5
   m_Name: Npc Inventory UI Holder
   m_TagString: Untagged
@@ -2310,6 +2311,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SlotPrefab: {fileID: 7044043235325146932, guid: 47e1ebcfcd0c3984ebed7df2a063c796, type: 3}
   slotsParent: {fileID: 2131498135}
+--- !u!114 &170902084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170902080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0729d4c32eaff704a931169827dc0913, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  equipButtonUiElement: {fileID: 634239710}
+  npcInventory: {fileID: 1415646738}
 --- !u!1 &187479285
 GameObject:
   m_ObjectHideFlags: 0
@@ -9846,6 +9861,17 @@ SpriteShapeRenderer:
     m_Center: {x: 0.33342862, y: 0.001162529, z: 0}
     m_Extent: {x: 3.5426142, y: 1.6098104, z: 0}
   m_SpriteSortPoint: 0
+--- !u!114 &634239710 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1290757139253145789, guid: 1c0a0bab09e483544aee80514248fd8c, type: 3}
+  m_PrefabInstance: {fileID: 4963396031776473626}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d0ded8c9be871546b5ceee31c4ef78d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &637743669
 GameObject:
   m_ObjectHideFlags: 0
