@@ -20938,7 +20938,7 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.03, y: 0.78}
+  m_Offset: {x: -0.03, y: 0.55}
   m_Size: {x: 1, y: 1.09}
   m_Direction: 0
 --- !u!50 &1487710561
@@ -30114,6 +30114,14 @@ PrefabInstance:
     - target: {fileID: 3680902510274338622, guid: 1c0a0bab09e483544aee80514248fd8c, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3680902510274338622, guid: 1c0a0bab09e483544aee80514248fd8c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3680902510274338622, guid: 1c0a0bab09e483544aee80514248fd8c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -286.82443
       objectReference: {fileID: 0}
     - target: {fileID: 3680902510806461127, guid: 1c0a0bab09e483544aee80514248fd8c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
