@@ -5,10 +5,13 @@ using UnityEngine;
 public class InventoryUI : MonoBehaviour
 {
     [SerializeField] private Inventory inventory;
+
     private InventorySlotsCreator inventorySlotsCreator;
-    private UiElement inventoryUiElement;
     private List<InventorySlotUI> inventorySlots;
     private InventorySlotUI selectedInventorySlot;
+
+    private UiElement inventoryUiElement;
+    
 
 
     private void Awake()
@@ -40,8 +43,15 @@ public class InventoryUI : MonoBehaviour
     private void InventorySlotUI_OnSelected(object sender, EventArgs e)
     {
         selectedInventorySlot = sender as InventorySlotUI;
-        inventory.SetSelectedItem(selectedInventorySlot.GetItem());
 
+        ItemSO selectedItemSO = selectedInventorySlot.GetItem();
+        inventory.SetSelectedItem(selectedItemSO);
+        
+        ResetPreviouslySelectedSlot();
+    }
+
+    private void ResetPreviouslySelectedSlot()
+    {
         foreach (var inventorySlot in inventorySlots)
         {
             if (inventorySlot != selectedInventorySlot)

@@ -10,11 +10,15 @@ public abstract class Inventory : MonoBehaviour
         public List<ItemSO> InventoryItems;
         public bool inventoryState;
     }
+
+    public event EventHandler<OnItemSelectedEventArgs> OnItemSelected;
+    public class OnItemSelectedEventArgs : EventArgs
+    {
+        public ItemSO itemSO;
+    }
+
     [SerializeField] protected List<ItemSO> InventoryItems;
     [SerializeField] private int numberOfSlots;
-    private bool inventoryState;
-    private ItemSO selectedItem;
-
     public int NumberOfSlots 
     {
         get
@@ -23,13 +27,17 @@ public abstract class Inventory : MonoBehaviour
         }
     }
 
+    private bool isInventoryOpen;
+    private ItemSO selectedItem;
+
+
     public virtual void ToggleInventory()
     {
-        inventoryState = !inventoryState;
+        isInventoryOpen = !isInventoryOpen;
 
         OnInventoryUpdate?.Invoke(this, new OnInventoryOpenedEventArgs{
             InventoryItems = InventoryItems,
-            inventoryState = inventoryState
+            inventoryState = isInventoryOpen
         });
     }
 
@@ -37,7 +45,7 @@ public abstract class Inventory : MonoBehaviour
     {
         OnInventoryUpdate?.Invoke(this, new OnInventoryOpenedEventArgs{
             InventoryItems = InventoryItems,
-            inventoryState = inventoryState
+            inventoryState = isInventoryOpen
         });
     }
 
@@ -53,11 +61,6 @@ public abstract class Inventory : MonoBehaviour
         UpdateInventory();
     }
 
-    public int GetItemPositionInInventory(ItemSO item)
-    {
-        return InventoryItems.IndexOf(item);
-    }
-
     public void RemoveItem(ItemSO item)
     {
         if (!InventoryItems.Contains(item)) return;
@@ -68,12 +71,23 @@ public abstract class Inventory : MonoBehaviour
 
     public bool IsInventoryOpen()
     {
-        return inventoryState;
+        return isInventoryOpen;
     }
+
+    public int GetItemPositionInInventory(ItemSO item)
+    {
+        return InventoryItems.IndexOf(item);
+    }
+
 
     public void SetSelectedItem(ItemSO item)
     {
         selectedItem = item;
+
+        OnItemSelected?.Invoke(this, new OnItemSelectedEventArgs{
+            itemSO = selectedItem,
+        });
+
     }
 
     public ItemSO GetSelectedItem()

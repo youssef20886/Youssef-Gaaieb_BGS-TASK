@@ -4,11 +4,10 @@ using UnityEngine;
 public class EquipementsManager : MonoBehaviour
 {
     [SerializeField] private List<EquippableItemSo> equippedItems;
-    [SerializeField] private List<EquipementSlot> equipementSlots = new List<EquipementSlot>();
-
-    private Dictionary<Enums.EquipementType, EquipementSlot> equipmentsDict;
 
     private PlayerInventory playerInventory;
+    private List<EquipementSlot> equipementSlots = new List<EquipementSlot>();
+    private Dictionary<Enums.EquipementType, EquipementSlot> equipmentsDict;
 
     private void Awake()
     {
