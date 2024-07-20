@@ -15455,7 +15455,7 @@ GameObject:
   - component: {fileID: 1118596197}
   - component: {fileID: 1118596196}
   m_Layer: 0
-  m_Name: npc canvas
+  m_Name: npc Interact canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
