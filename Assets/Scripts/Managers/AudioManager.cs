@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class AudioManager : SingletonMonobehaviour<AudioManager>
 {
-    [SerializeField] private Inventory[] inventories;
+    [SerializeField] private PlayerInventory playerInventory;
+    [SerializeField] private NpcInventory npcInventory;
     [SerializeField] private TradesManager tradesManager;
 
     public AudioClipRefsSO audioClipRefsSO;
@@ -16,22 +17,27 @@ public class AudioManager : SingletonMonobehaviour<AudioManager>
 
     private void OnEnable()
     {
-        foreach (var inventory in inventories)
-        {
-            inventory.OnInventoryUpdate += Inventory_OnInventoryUpdate;        
-        }
+        playerInventory.OnGoldModified += PlayerInventory_OnGoldModified;
+        playerInventory.OnInventoryUpdate += Inventory_OnInventoryUpdate;        
+        npcInventory.OnInventoryUpdate += Inventory_OnInventoryUpdate;        
+
         tradesManager.OnBuy += TradesManager_OnBuy;
         tradesManager.OnSell += TradesManager_OnSell;
     }
 
     private void OnDisable()
     {
-        foreach (var inventory in inventories)
-        {
-            inventory.OnInventoryUpdate -= Inventory_OnInventoryUpdate;        
-        }      
+        playerInventory.OnGoldModified += PlayerInventory_OnGoldModified;
+        playerInventory.OnInventoryUpdate += Inventory_OnInventoryUpdate;        
+        npcInventory.OnInventoryUpdate += Inventory_OnInventoryUpdate;  
+
         tradesManager.OnBuy -= TradesManager_OnBuy;
         tradesManager.OnSell -= TradesManager_OnSell;
+    }
+
+    private void PlayerInventory_OnGoldModified(object sender, PlayerInventory.OnGoldModifiedEventArgs e)
+    {
+        PlaySound(audioClipRefsSO.coinsSound);
     }
 
     private void Inventory_OnInventoryUpdate(object sender, Inventory.OnInventoryOpenedEventArgs e)

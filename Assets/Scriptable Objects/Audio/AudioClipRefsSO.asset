@@ -28,3 +28,4 @@ MonoBehaviour:
   inventoryCloseSound: {fileID: 8300000, guid: 946b0529500d76e42a57cd954bbdc8df, type: 3}
   purchaseSound: {fileID: 8300000, guid: c3649b965826d8b459dddfed9ad0a98f, type: 3}
   sellSound: {fileID: 8300000, guid: eb41402b15f596542999865469b4e3e4, type: 3}
+  coinsSound: {fileID: 8300000, guid: 626bbb5b8bda22f44a991ab0f998ec5e, type: 3}

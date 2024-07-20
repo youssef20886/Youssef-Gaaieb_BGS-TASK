@@ -9,5 +9,6 @@ public class AudioClipRefsSO : ScriptableObject
     public AudioClip inventoryCloseSound;
     public AudioClip purchaseSound;
     public AudioClip sellSound;
+    public AudioClip coinsSound;
 
 }
