@@ -9,20 +9,22 @@ public class PlayerInteractions : MonoBehaviour
         public IInteractable interactable;
     }
 
+    private PlayerInteractionsTrigger playerInteractionsTrigger;
     private IInteractable currentInteractable;
 
-    private void CallOnPlayerInteract()
+    private void Awake()
     {
-        OnPlayerInteract?.Invoke(this, new OnPlayerInteractEventArgs{
-            interactable = currentInteractable
-        });
-        currentInteractable.Interact();
+        playerInteractionsTrigger = GetComponent<PlayerInteractionsTrigger>();    
     }
 
-    public void ResetInteractable()
+    private void OnEnable()
     {
-        currentInteractable = null;
+        playerInteractionsTrigger.OnInteractableDetected += PlayerInteractionsTrigger_OnInteractableDetected; 
+    }
 
+    private void OnDisable()
+    {
+        playerInteractionsTrigger.OnInteractableDetected -= PlayerInteractionsTrigger_OnInteractableDetected; 
     }
 
     public void HandleInteractions(bool isInteractPressed)
@@ -33,9 +35,36 @@ public class PlayerInteractions : MonoBehaviour
         }
     }
 
-    public void SetInteractable(IInteractable interactable)
+    private void PlayerInteractionsTrigger_OnInteractableDetected(object sender, PlayerInteractionsTrigger.OnInteractableDetectedEventArgs e)
+    {
+        if (e.interactable is MerchantNpc)
+        {
+            SetInteractable(e.interactable);
+        }
+        else
+        {
+            ResetInteractable();
+        }
+    }
+
+    private void CallOnPlayerInteract()
+    {
+        OnPlayerInteract?.Invoke(this, new OnPlayerInteractEventArgs{
+            interactable = currentInteractable
+        });
+        currentInteractable.Interact();
+    }
+
+    private void SetInteractable(IInteractable interactable)
     {
         currentInteractable = interactable;
     }
+
+    private void ResetInteractable()
+    {
+        currentInteractable = null;
+
+    }
+
 
 }

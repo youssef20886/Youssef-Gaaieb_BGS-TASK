@@ -1,21 +1,21 @@
 using System;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerInteractions))]
 public class PlayerInteractionsTrigger : MonoBehaviour
 {
-    PlayerInteractions playerInteractions;
-
-    private void Awake()
+    public event EventHandler<OnInteractableDetectedEventArgs> OnInteractableDetected;
+    public class OnInteractableDetectedEventArgs : EventArgs
     {
-        playerInteractions = GetComponent<PlayerInteractions>();    
+        public IInteractable interactable;
     }
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
         if (other.TryGetComponent<IInteractable>(out IInteractable interactable))
         {
-            playerInteractions.SetInteractable(interactable);
+            OnInteractableDetected?.Invoke(this, new OnInteractableDetectedEventArgs{
+                interactable = interactable
+            });
         }
     }
 
@@ -23,7 +23,9 @@ public class PlayerInteractionsTrigger : MonoBehaviour
     {
         if (other.TryGetComponent<IInteractable>(out IInteractable interactable))
         {
-            playerInteractions.ResetInteractable();
+            OnInteractableDetected?.Invoke(this, new OnInteractableDetectedEventArgs{
+                interactable = null
+            });
         }
     }
 }
