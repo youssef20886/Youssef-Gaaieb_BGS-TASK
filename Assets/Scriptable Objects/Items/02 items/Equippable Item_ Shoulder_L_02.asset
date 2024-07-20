@@ -15,6 +15,7 @@ MonoBehaviour:
   itemName: Basic left Shoulder
   icon: {fileID: 21300000, guid: d654c009a8031fc40a1e56dccbf02c67, type: 3}
   sprite: {fileID: 21300000, guid: 805906b1206aa944b99385aa2c600d2f, type: 3}
-  price: 100
-  rarity: 0
+  price: 300
+  rarity: 1
+  description: 
   equipementType: 11

@@ -15,6 +15,7 @@ MonoBehaviour:
   itemName: Basic right Leg
   icon: {fileID: 21300000, guid: 15ee119a22ade3e48b4e67e310ef586e, type: 3}
   sprite: {fileID: 21300000, guid: 3cf87d879b214174ea666233f56d905e, type: 3}
-  price: 100
-  rarity: 0
+  price: 300
+  rarity: 1
+  description: 
   equipementType: 10

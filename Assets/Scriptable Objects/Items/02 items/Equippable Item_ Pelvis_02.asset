@@ -15,6 +15,7 @@ MonoBehaviour:
   itemName: Basic Pelvis
   icon: {fileID: 21300000, guid: 5898913d0d314ab47af41b94d1a88f9d, type: 3}
   sprite: {fileID: 21300000, guid: 0c6412d95175c2b40bd9a27f7d1fa096, type: 3}
-  price: 100
-  rarity: 0
+  price: 300
+  rarity: 1
+  description: 
   equipementType: 3

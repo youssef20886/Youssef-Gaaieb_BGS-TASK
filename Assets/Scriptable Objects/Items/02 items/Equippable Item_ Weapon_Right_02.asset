@@ -15,6 +15,7 @@ MonoBehaviour:
   itemName: Basic Weapon
   icon: {fileID: 21300000, guid: 46fe353a4dd499941b62350fa60a2f24, type: 3}
   sprite: {fileID: 21300000, guid: 97ad91e8b9bc5f94f941f06a70776c26, type: 3}
-  price: 100
-  rarity: 0
+  price: 300
+  rarity: 1
+  description: 
   equipementType: 1

@@ -15,6 +15,7 @@ MonoBehaviour:
   itemName: Basic right Wrist
   icon: {fileID: 21300000, guid: e98b99bf33737a94f9aca15173ba0bcf, type: 3}
   sprite: {fileID: 21300000, guid: 30716b7cc770c7b46beff26e032f9ca7, type: 3}
-  price: 100
-  rarity: 0
+  price: 300
+  rarity: 1
+  description: 
   equipementType: 14

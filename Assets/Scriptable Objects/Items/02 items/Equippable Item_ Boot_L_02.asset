@@ -15,6 +15,7 @@ MonoBehaviour:
   itemName: Basic left boot
   icon: {fileID: 21300000, guid: 164343c771fbc9a4ba90c40b6719e388, type: 3}
   sprite: {fileID: 21300000, guid: 2932647fff9189e40a62a25143f3f534, type: 3}
-  price: 100
-  rarity: 0
+  price: 300
+  rarity: 1
+  description: 
   equipementType: 5

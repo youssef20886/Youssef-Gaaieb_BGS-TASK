@@ -15,6 +15,7 @@ MonoBehaviour:
   itemName: Basic Hood
   icon: {fileID: 21300000, guid: 4b70ba0537c6a8743a9b4b455c688955, type: 3}
   sprite: {fileID: 21300000, guid: ae2d3e3bacfacde4981510b116293dba, type: 3}
-  price: 100
-  rarity: 0
+  price: 300
+  rarity: 1
+  description: 
   equipementType: 2

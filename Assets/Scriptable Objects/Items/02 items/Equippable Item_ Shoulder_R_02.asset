@@ -15,6 +15,7 @@ MonoBehaviour:
   itemName: Basic right Shoulder
   icon: {fileID: 21300000, guid: c20ac68916021224f8e40b0fa5ff2e7f, type: 3}
   sprite: {fileID: 21300000, guid: 9fe981f3e80b99e429e4399b985d07f4, type: 3}
-  price: 100
-  rarity: 0
+  price: 300
+  rarity: 1
+  description: 
   equipementType: 12
