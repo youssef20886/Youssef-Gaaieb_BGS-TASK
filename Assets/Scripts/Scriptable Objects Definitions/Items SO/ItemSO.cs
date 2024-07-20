@@ -7,5 +7,6 @@ public abstract class ItemSO : ScriptableObject
     public Sprite sprite;
     public int price;
     public Enums.Rarity rarity;
+    public string description;
 
 }
