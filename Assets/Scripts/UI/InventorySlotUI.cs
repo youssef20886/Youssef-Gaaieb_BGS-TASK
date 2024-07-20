@@ -55,4 +55,16 @@ public class InventorySlotUI : MonoBehaviour
             selectedFrame.SetActive(false);
         }
     }
+
+    public void PointerEnter()
+    {
+        if (itemSO == null) return;
+        
+        print("You are hovering");
+    }
+
+    public void PointerExit()
+    {
+        print("Exit");
+    }
 }
