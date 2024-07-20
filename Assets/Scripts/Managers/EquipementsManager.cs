@@ -39,7 +39,6 @@ public class EquipementsManager : MonoBehaviour
         {
             equipmentsDict.Add(equipementSlot.equipementType, equipementSlot);
             equipementSlots.Add(equipementSlot);
-            print(equipementSlot.equipementType);
         }
     }
 
